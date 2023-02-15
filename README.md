@@ -16,8 +16,14 @@ To use this service you will need to create the following:
 See [Using web services](https://docs.moodle.org/33/en/Using_web_services) in the Moodle documentation for information about creating and enabling web services. The user will need the following capabilities in addition to whichever protocol you enable:
 
 - `moodle/mod/quiz:manageoverrides`
-- `moodle/mod/quiz:viewoverrides`
 
+Use
+----
+Take care that is the quiz id and not the cmid of the activity.
+The create service insert or update if the override already exist.
+
+https://myhost/webservice/rest/server.php?moodlewsrestformat=json&&wstoken=mytoken&wsfunction=local_ws_quiz_overrides_create_quiz_overrides&userid=1234&quizid=5678&multiplier=1.5
+https://myhost/webservice/rest/server.php?moodlewsrestformat=json&&wstoken=mytoken&wsfunction=local_ws_quiz_overrides_delete_quiz_overrides&userid=1234&quizid=5678
 
 Requirements
 ------------
